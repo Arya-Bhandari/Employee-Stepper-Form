@@ -1,0 +1,31 @@
+<div class="progress-wrapper">
+  <div id="progress-bar-container">
+    <ul>
+      <li class="step step01" (click)="setActiveStep(step)" 
+        [ngClass]="step.stepname == activeStep.stepname? 'active':''"
+       *ngFor="let step of stepList">
+        <div class="step-inner">{{step.stepname}}</div>
+      </li>
+
+    </ul>
+    <div id="line">
+      <div id="line-progress" [style.width.%]="stepperCompletionValue"></div>
+    </div>
+    <!-- progress-bar-container -->
+    <div id="progress-content-section">
+      <div class="section-content step1 active" *ngIf="activeStep.stepname == 'Basic Deatils'">
+        <app-basic-details (next)="goToStep2()" (basicDetaisChange)="onBasicDetailsRecived($event)">
+        </app-basic-details>
+      </div>
+      <div class="section-content step2 active" *ngIf="activeStep.stepname == 'Skills'">
+        <app-skills (next)="goToStep3()" (empSkillChange)="onSkillRecived($event)">
+        </app-skills>
+      </div>
+      <div class="section-content step3 active" *ngIf="activeStep.stepname == 'Experience'">
+        <app-experience (empExpChanges)="onExpRecived($event)" 
+        (finishedSaved)="saveEmployee()"></app-experience>
+      </div>
+    </div>
+  </div>
+  <!-- progress-wrapper -->
+</div>

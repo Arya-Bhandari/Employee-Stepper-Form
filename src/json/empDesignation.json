@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "designationId": 1,
+      "designation": "UI/UX Designer"
+    },
+    {
+      "designationId": 2,
+      "designation": "Front enddeveloper"
+    },
+    {
+      "designationId": 3,
+      "designation": "back end developer"
+    }
+  ]
+}

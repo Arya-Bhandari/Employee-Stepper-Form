@@ -1,0 +1,28 @@
+<h1>Employee Table</h1>
+<div class="text-end">
+  <button type="button" class="btn btn-primary btn-sm" [routerLink]="'/' + Route.steps">Add Employee</button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.no</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone No</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Role</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employeeList, let i = index">
+      <td>{{ i+1 }}</td>
+      <td>{{ emp.empName }}</td>
+      <td>{{ emp.empEmailId }}</td>
+      <td>{{ emp.empContactNo }}</td>
+      <td>{{ getDesignationName(emp.empDesignationId) }}</td>
+      <td>{{ getRoleName(emp.roleId) }}</td>
+      <td><button (click)="deleteEmp(emp.id!)" class="btn btn-sm btn-danger">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

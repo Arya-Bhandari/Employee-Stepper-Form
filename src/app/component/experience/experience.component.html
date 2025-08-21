@@ -1,0 +1,38 @@
+<div>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Company</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Project</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="input-row">
+        <td><input type="text" [(ngModel)]="empExpObj.companyName" placeholder="Company"></td>
+        <td><input type="date" [(ngModel)]="empExpObj.startDate"></td>
+        <td><input type="date" [(ngModel)]="empExpObj.endDate"></td>
+        <td><input type="text" [(ngModel)]="empExpObj.designation" placeholder="Designation"></td>
+        <td><input type="text" [(ngModel)]="empExpObj.projectsWorkedOn" placeholder="Project"></td>
+        <td><button type="button" class="btn btn-sm btn-light" (click)="onSave()">Add</button></td>
+      </tr>
+
+      <tr *ngFor="let e of empExpDetail; let i = index">
+        <td>{{ e.companyName }}</td>
+        <td>{{ e.startDate }}</td>
+        <td>{{ e.endDate }}</td>
+        <td>{{ e.designation }}</td>
+        <td>{{ e.projectsWorkedOn }}</td>
+        <td><button type="button" class="btn btn-sm btn-danger" (click)="deleteSkill(i)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="text-end">
+  <button type="button" class="btn btn-primary btn-sm" (click)="finish()">Finish</button>
+</div>

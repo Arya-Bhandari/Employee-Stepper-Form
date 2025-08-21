@@ -1,0 +1,24 @@
+{
+  "roleData": [
+    {
+      "roleId": 1,
+      "role": "Super Admin"
+    },
+    {
+      "roleId": 2,
+      "role": "Admin"
+    },
+    {
+      "roleId": 3,
+      "role": "TL"
+    },
+    {
+      "roleId": 4,
+      "role": "Juniora Developer"
+    },
+    {
+      "roleId": 5,
+      "role": "Senior Developer"
+    }
+  ]
+}

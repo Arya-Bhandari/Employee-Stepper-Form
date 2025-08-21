@@ -1,0 +1,28 @@
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th>Skill</th>
+      <th>Total Experience</th>
+      <th>Version</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td><input type="text" [(ngModel)]="empSkillObj.skill" placeholder="Skill"></td>
+      <td><input type="number" [(ngModel)]="empSkillObj.totalYearExp" placeholder="Total Experience"></td>
+      <td><input type="text" [(ngModel)]="empSkillObj.lastVersionUsed" placeholder="Version"></td>
+      <td><button (click)="saveData()">Add</button></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of employeeSkillDetails; let i = index">
+      <td>{{ s.skill }}</td>
+      <td>{{ s.totalYearExp }}</td>
+      <td>{{ s.lastVersionUsed }}</td>
+      <td><button class="btn btn-sm btn-danger" (click)="deleteSkill(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text-end">
+  <button type="button" class="btn btn-primary btn-sm" (click)="onNextClick()">Next</button>
+</div>

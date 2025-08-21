@@ -1,0 +1,17 @@
+.table-dark {
+  width: 100%;
+  margin: 0;            /* Remove extra space */
+  border-collapse: collapse;
+}
+
+.table-dark th,
+.table-dark td {
+  padding: 8px 12px;    /* Match Skills table padding */
+  vertical-align: middle;
+}
+
+.table-dark input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 8px;
+}

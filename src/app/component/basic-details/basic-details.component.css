@@ -1,0 +1,25 @@
+#person-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.input-style{
+  padding: 5px;
+  margin: 10px;
+}
+
+#address-info{
+  display: flex;
+  flex-direction: column;
+}
+.address{
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.addressInput{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,97 @@
+<div id="main-container" [formGroup]="empBasicDetails">
+  <h5>Basic Details</h5>
+  <div id="person-info" class="row pb-2">
+    <div class="form-group text start col-md-3">
+      <input class="form-control"  formControlName="empName" type="text" placeholder="Enter Name">
+    </div>
+    <div class="form-group text start col-md-3">
+      <input class="form-control"  formControlName="empEmailId" type="email" placeholder="Enter Email">
+    </div>
+    <div class="form-group text start col-md-3">
+      <input class="form-control"  formControlName="password" type="password" placeholder="Enter Password">
+    </div>
+    <div class="form-group text start col-md-3">
+      <select class="form-select"  formControlName="empDesignationId">
+          <option [value]="0" disabled selected hidden>
+            Select Designation
+          </option>
+        @for (item of designationDetails; track $index) {
+          <option [value]="item.designationId">{{item.designation}}</option>
+        }
+      </select>
+    </div>
+    <div class="form-group text start col-md-3">
+      <select class="form-select"  formControlName="roleId">
+        <option [value]="0" disabled selected hidden>
+            Select Role
+          </option>
+        @for (item of roleDetail; track $index) {
+          <option [value]="item.roleId">{{item.role}}</option>
+        }
+      </select>
+    </div>
+    <div class="form-group text start col-md-3">
+      <input class="form-control"  formControlName="empContactNo" type="text" placeholder="Contact No.">
+    </div>
+    <div class="form-group text start col-md-3">
+      <input class="form-control"  formControlName="empAltContactNo" type="text" placeholder="Alternate Contact No.">
+    </div>
+    <div class="form-group text start col-md-3">
+      <input class="form-control"  formControlName="empPersonalEmailId" type="email" placeholder="Personal Email">
+    </div>
+  </div>
+  <hr>
+  <div id="experience" class="row pb-2">
+    <h6>Experience</h6>
+    <div class="form-group text start col-md-3">
+      <input class="form-control"  formControlName="empExpTotalYear" type="text" placeholder="Enter total years off experience">
+    </div>
+    <div class="form-group text start col-md-3">
+      <input class="form-control"  formControlName="empExpTotalMonth" type="text" placeholder="Enter total month off experience">
+    </div>
+  </div>
+  <hr>
+  <div id="address-info">
+    <div class="address">
+      <h6>Current Address</h6>
+      <div class="addressInput" class="row pb-2">
+        <div class="form-group text start col-md-3">
+          <input class="form-control"  formControlName="empCity" type="text" placeholder="City">
+        </div>
+        <div class="form-group text start col-md-3">
+          <input class="form-control"  formControlName="empState" type="text" placeholder="State"> 
+        </div>
+        <div class="form-group text start col-md-3">
+          <input class="form-control"  formControlName="empPinCode" type="text" placeholder="Pincode"> 
+        </div>
+        <div class="form-group text start col-md-3">
+          <input class="form-control"  formControlName="empAddress" type="text" placeholder="Address">
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="address">
+      <h6>Permanent Address</h6>
+      <div class="addressInput" class="row pb-2">
+        <div class="form-group text start col-md-3">
+          <input class="form-control"  formControlName="empPerCity" type="text" placeholder="City">
+        </div>
+        <div class="form-group text start col-md-3">
+          <input class="form-control"  formControlName="empPerState" type="text" placeholder="State"> 
+        </div>
+        <div class="form-group text start col-md-3">
+          <input class="form-control"  formControlName="empPerPinCode" type="text" placeholder="Pincode">
+        </div>
+        <div class="form-group text start col-md-3">
+          <input class="form-control"  formControlName="empPerAddress" type="text" placeholder="Address">
+        </div>
+      </div>
+    </div>    
+  </div>
+
+  <div class="row">
+    <div class="col-12 text-end">
+          <button type="button" class="btn btn-primary btn-sm" (click)="onNextClick()">Next</button>
+    </div>
+  </div>
+</div>
