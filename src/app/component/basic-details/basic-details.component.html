@@ -1,16 +1,27 @@
 <div id="main-container" [formGroup]="empBasicDetails">
   <h5>Basic Details</h5>
   <div id="person-info" class="row pb-2">
-    <div class="form-group text start col-md-3">
-      <input class="form-control"  formControlName="empName" type="text" placeholder="Enter Name">
+    <div id="display" id="display" class="form-group text start col-md-3">
+      <div class="validation">
+        <input class="form-control"  formControlName="empName" type="text" placeholder="Enter Name">
+        <span *ngIf="empName?.hasError('required') || (empName?.touched)">*</span>
+      </div>
     </div>
-    <div class="form-group text start col-md-3">
-      <input class="form-control"  formControlName="empEmailId" type="email" placeholder="Enter Email">
+    <div id="display" class="form-group text start col-md-3">
+      <div class="validation">
+        <input class="form-control"  formControlName="empEmailId" type="email" placeholder="Enter Email">
+        <span *ngIf="empEmailId?.hasError('required')">*</span>
+      </div>
+      <span *ngIf="empEmailId?.invalid && (empEmailId?.touched)">Enter vaild email</span>
     </div>
-    <div class="form-group text start col-md-3">
-      <input class="form-control"  formControlName="password" type="password" placeholder="Enter Password">
+    <div id="display" class="form-group text start col-md-3">
+      <div class="validation">
+        <input class="form-control"  formControlName="password" type="password" placeholder="Enter Password">
+        <span *ngIf="password?.hasError('required')">*</span>
+      </div>
+      <span *ngIf="password?.invalid && (password?.touched)"></span>
     </div>
-    <div class="form-group text start col-md-3">
+    <div id="display" class="form-group text start col-md-3">
       <select class="form-select"  formControlName="empDesignationId">
           <option [value]="0" disabled selected hidden>
             Select Designation
@@ -20,7 +31,7 @@
         }
       </select>
     </div>
-    <div class="form-group text start col-md-3">
+    <div id="display" class="form-group text start col-md-3">
       <select class="form-select"  formControlName="roleId">
         <option [value]="0" disabled selected hidden>
             Select Role
@@ -30,24 +41,42 @@
         }
       </select>
     </div>
-    <div class="form-group text start col-md-3">
-      <input class="form-control"  formControlName="empContactNo" type="text" placeholder="Contact No.">
+    <div id="display" class="form-group text start col-md-3">
+      <div class="validation">
+        <input class="form-control"  formControlName="empContactNo" type="text" placeholder="Contact No.">  
+        <span *ngIf="empContactNo?.hasError('required')">*</span>
+      </div>
+      <span *ngIf="empContactNo?.invalid && (empContactNo?.touched)">Enter valid number</span>
     </div>
-    <div class="form-group text start col-md-3">
-      <input class="form-control"  formControlName="empAltContactNo" type="text" placeholder="Alternate Contact No.">
+    <div id="display" class="form-group text start col-md-3">
+      <div class="validation">
+        <input class="form-control"  formControlName="empAltContactNo" type="text" placeholder="Alternate Contact No.">
+        <span *ngIf="empAltContactNo?.hasError('required')">*</span>
+      </div>
+      <span *ngIf="empAltContactNo?.invalid && (empAltContactNo?.touched)">Enter valid number</span>
     </div>
-    <div class="form-group text start col-md-3">
-      <input class="form-control"  formControlName="empPersonalEmailId" type="email" placeholder="Personal Email">
+    <div id="display" class="form-group text start col-md-3">
+      <div class="validation">
+        <input class="form-control"  formControlName="empPersonalEmailId" type="email" placeholder="Personal Email">
+        <span *ngIf="empPersonalEmailId?.hasError('required')">*</span>
+      </div>
+      <span *ngIf="empPersonalEmailId?.invalid && (empPersonalEmailId?.touched)">Enter vaild email</span>
     </div>
   </div>
   <hr>
   <div id="experience" class="row pb-2">
     <h6>Experience</h6>
-    <div class="form-group text start col-md-3">
-      <input class="form-control"  formControlName="empExpTotalYear" type="text" placeholder="Enter total years off experience">
+    <div id="display" class="form-group text start col-md-3">
+      <div class="validation">
+        <input class="form-control"  formControlName="empExpTotalYear" type="text" placeholder="Enter total years off experience">
+        <span *ngIf="empExpTotalYear?.hasError('required') || (empExpTotalYear?.touched)"></span>
+      </div>
     </div>
-    <div class="form-group text start col-md-3">
-      <input class="form-control"  formControlName="empExpTotalMonth" type="text" placeholder="Enter total month off experience">
+    <div id="display" class="form-group text start col-md-3">
+      <div class="validation">
+        <input class="form-control"  formControlName="empExpTotalMonth" type="text" placeholder="Enter total month off experience">
+        <span *ngIf="empExpTotalMonth?.hasError('required') || (empExpTotalMonth?.touched)"></span>
+      </div>
     </div>
   </div>
   <hr>
@@ -55,17 +84,27 @@
     <div class="address">
       <h6>Current Address</h6>
       <div class="addressInput" class="row pb-2">
-        <div class="form-group text start col-md-3">
+        <div id="display" class="form-group text start col-md-3">
           <input class="form-control"  formControlName="empCity" type="text" placeholder="City">
+          <span *ngIf="empCity?.hasError('required') || (empCity?.touched)">*</span>
         </div>
-        <div class="form-group text start col-md-3">
-          <input class="form-control"  formControlName="empState" type="text" placeholder="State"> 
+        <div id="display" class="form-group text start col-md-3">
+          <div class="validation">
+            <input class="form-control"  formControlName="empState" type="text" placeholder="State">
+            <span *ngIf="empState?.hasError('required') || (empState?.touched)">*</span>
+          </div>
         </div>
-        <div class="form-group text start col-md-3">
-          <input class="form-control"  formControlName="empPinCode" type="text" placeholder="Pincode"> 
+        <div id="display" class="form-group text start col-md-3">
+          <div class="validation">
+            <input class="form-control"  formControlName="empPinCode" type="text" placeholder="Pincode">
+            <span *ngIf="empPinCode?.hasError('required')||empPinCode?.touched">*</span>
+          </div>
         </div>
-        <div class="form-group text start col-md-3">
-          <input class="form-control"  formControlName="empAddress" type="text" placeholder="Address">
+        <div id="display" class="form-group text start col-md-3">
+          <div class="validation">
+            <input class="form-control"  formControlName="empAddress" type="text" placeholder="Address">
+            <span *ngIf="empAddress?.hasError('required') || empAddress?.touched">*</span>
+          </div>
         </div>
       </div>
     </div>
@@ -73,17 +112,29 @@
     <div class="address">
       <h6>Permanent Address</h6>
       <div class="addressInput" class="row pb-2">
-        <div class="form-group text start col-md-3">
-          <input class="form-control"  formControlName="empPerCity" type="text" placeholder="City">
+        <div id="display" class="form-group text start col-md-3">
+          <div class="validation">
+            <input class="form-control"  formControlName="empPerCity" type="text" placeholder="City">
+            <span *ngIf="empPerCity?.hasError('required') || empPerCity?.touched">*</span>
+          </div>
         </div>
-        <div class="form-group text start col-md-3">
-          <input class="form-control"  formControlName="empPerState" type="text" placeholder="State"> 
+        <div id="display" class="form-group text start col-md-3">
+          <div class="validation">
+            <input class="form-control"  formControlName="empPerState" type="text" placeholder="State"> 
+            <span *ngIf="empPerState?.hasError('required') || empPerState?.touched">*</span>
+          </div>
         </div>
-        <div class="form-group text start col-md-3">
-          <input class="form-control"  formControlName="empPerPinCode" type="text" placeholder="Pincode">
+        <div id="display" class="form-group text start col-md-3">
+          <div class="validation">
+            <input class="form-control"  formControlName="empPerPinCode" type="text" placeholder="Pincode">
+            <span *ngIf="empPerPinCode?.hasError('required') || empPerPinCode?.touched">*</span>
+          </div>
         </div>
-        <div class="form-group text start col-md-3">
-          <input class="form-control"  formControlName="empPerAddress" type="text" placeholder="Address">
+        <div id="display" class="form-group text start col-md-3">
+          <div class="validation">
+            <input class="form-control"  formControlName="empPerAddress" type="text" placeholder="Address">
+            <span *ngIf="empPerAddress?.hasError('required') || empPerAddress?.touched">*</span>
+          </div>
         </div>
       </div>
     </div>    

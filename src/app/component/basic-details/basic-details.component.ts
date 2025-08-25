@@ -1,10 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { basicDetais } from '../../interface/basicDetails.interface';
-import { designationResponse } from '../../interface/designationResponse.interface';
 import { HttpClient } from '@angular/common/http';
 import { designation } from '../../interface/designation.interface';
 import { role } from '../../interface/role.interface';
-import { roleResponse } from '../../interface/roleResponse.interface';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

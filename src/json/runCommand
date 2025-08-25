@@ -1,0 +1,6 @@
+<!-- This file is for json port, as to not run json file on wrong port which could ruin the already imported json https
+JSON port's for:
+
+employee.json: json-server --watch src/json/employee.json --port 3000  
+emplDesignation.json: json-server --watch src/json/empDesignation.json --port 3001  
+empRole.json: json-server --watch src/json/empRole.json --port 3002  -->
